@@ -7,9 +7,7 @@ import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class ConfigurationBeans {
-
-
-
+    
     // Beans is advisable to use when I have an external service
     // that required to managed configuration, such as scope
     @Bean
