@@ -1,4 +1,4 @@
-package com.helloSpring.helloSpring;
+package com.helloSpring.firstServiceHelloSpring;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

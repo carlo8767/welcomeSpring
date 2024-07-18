@@ -1,4 +1,4 @@
-package com.helloSpring.helloSpring.controller;
+package com.helloSpring.firstServiceHelloSpring.controller;
 
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;

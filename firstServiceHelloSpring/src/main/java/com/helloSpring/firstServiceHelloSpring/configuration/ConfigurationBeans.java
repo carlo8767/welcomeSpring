@@ -1,6 +1,6 @@
-package com.helloSpring.helloSpring.configuration;
+package com.helloSpring.firstServiceHelloSpring.configuration;
 
-import com.helloSpring.helloSpring.utility.BankOperations;
+import com.helloSpring.firstServiceHelloSpring.utility.BankOperations;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;

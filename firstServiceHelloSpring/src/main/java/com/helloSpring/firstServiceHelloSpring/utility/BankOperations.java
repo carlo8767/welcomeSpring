@@ -1,4 +1,4 @@
-package com.helloSpring.helloSpring.utility;
+package com.helloSpring.firstServiceHelloSpring.utility;
 
 public class BankOperations {
 

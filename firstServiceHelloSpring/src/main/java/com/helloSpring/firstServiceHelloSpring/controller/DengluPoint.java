@@ -1,7 +1,7 @@
-package com.helloSpring.helloSpring.controller;
+package com.helloSpring.firstServiceHelloSpring.controller;
 
-import com.helloSpring.helloSpring.dto.UserLogin;
-import com.helloSpring.helloSpring.utility.BankOperations;
+import com.helloSpring.firstServiceHelloSpring.dto.UserLogin;
+import com.helloSpring.firstServiceHelloSpring.utility.BankOperations;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
