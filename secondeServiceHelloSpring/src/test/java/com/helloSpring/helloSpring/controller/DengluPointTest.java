@@ -53,5 +53,15 @@ class DengluPointTest {
         assertEquals("FakePippo", answer);
     }
 
+    @Test
+    public void verifyReadProperties(){
+        String url = "/denglu/helloExternal";
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
+        DocumentContext documentContext = JsonPath.parse(responseEntity.getBody());
+        String answer = documentContext.read("$");
+        assertEquals("welcome to external configurations", answer);
+
+    }
+
 
 }
