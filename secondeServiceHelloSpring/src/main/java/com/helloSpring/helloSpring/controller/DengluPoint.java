@@ -1,8 +1,9 @@
 package com.helloSpring.helloSpring.controller;
 
+import com.helloSpring.helloSpring.configuration.Values;
 import com.helloSpring.helloSpring.dto.UserLogin;
 import com.helloSpring.helloSpring.utility.BankOperations;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -13,11 +14,10 @@ import java.util.Optional;
 @RequestMapping("/denglu")
 public class DengluPoint {
 
-
-    // READ AN  EXTERNAL PROPERTY
-    @Value("${hello.welcome}")
-    private String helloWelcome;
     private BankOperations bankOperations;
+
+    @Autowired
+    private Values configurationValues;
 
 
     public DengluPoint(BankOperations bankOperations) {
@@ -53,7 +53,7 @@ public class DengluPoint {
     @ResponseBody
     public String helloExternal(){
 
-        return helloWelcome;
+        return configurationValues.getWelcome();
     }
 }
 
