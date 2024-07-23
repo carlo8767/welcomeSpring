@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties
-@PropertySource("file:C:/Users/Carlo/Desktop/Program/Spring/project_Spring/welcomeSpring/test/application.properties")
+@PropertySource("file:/home/robothg/Desktop/project_/project_Java/spring_project/welcomeSpring/configuration/application.properties")
 @Getter
 @Setter
 public class Values {
@@ -18,7 +18,4 @@ public class Values {
 
     private String welcome;
 
-
-    
-    
 }
