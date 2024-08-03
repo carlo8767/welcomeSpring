@@ -13,7 +13,7 @@
 
   <modules>
     <module>firstServiceHelloSpring</module>
-    <module>secondeServiceHelloSpring</module>
+    <module>secondServiceHelloSpring</module>
   </modules>
 
 </project>
