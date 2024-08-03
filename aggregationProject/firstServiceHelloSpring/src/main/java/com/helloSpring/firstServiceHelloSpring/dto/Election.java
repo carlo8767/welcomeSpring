@@ -12,6 +12,6 @@ import java.time.LocalDateTime;
 public class Election {
 
     private String typeElection;
-    private LocalDateTime localDateTime;
-    
+    private String localDateTime;
+
 }

@@ -1,17 +1,13 @@
 package com.helloSpring.firstServiceHelloSpring.apiDescriptor;
 
 import com.helloSpring.firstServiceHelloSpring.dto.Election;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 
+@RequestMapping("/election")
 public interface ElectionApiDescriptor {
 
-
-
-    @GetMapping
+    @GetMapping("/typeElection")
     @ResponseBody
-    public Election getTypeElection (@RequestParam("nameElection") String nameElection, @RequestParam ("dateElection")LocalDateTime dateElection);
+    public Election getTypeElection (@RequestParam("nameElection") String nameElection, @RequestParam ("dateElection")String dateElection);
 }
