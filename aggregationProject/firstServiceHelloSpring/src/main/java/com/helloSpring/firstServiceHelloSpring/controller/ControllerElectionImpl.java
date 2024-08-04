@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 @RestController
-public class ControllerElection implements ElectionApiDescriptor {
+public class ControllerElectionImpl implements ElectionApiDescriptor {
 
     @Override
     public Election getTypeElection(String nameElection, String dateElection) {

@@ -26,7 +26,7 @@ class ControllerElectionTest {
 
     @Test
     public void  testResponseElection (){
-        ControllerElection s = new ControllerElection();
+        ControllerElectionImpl s = new ControllerElectionImpl();
         s.getTypeElection("fakeElection", "2019-02-29");
     }
 

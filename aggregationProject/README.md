@@ -5,6 +5,11 @@ This project covers this subject:
 2.ExternalConfigurationsFile
 3.Component 
 4.Bean
+5.Swagger
+
+You can find the swagger and the documentation at :
+http://localhost:port/contextPath/api-docs
+http://localhost:port/contextPath/swagger-ui/index.html#/
 
 
 # aggregationProject
@@ -22,3 +27,5 @@ See the Class Values with these properties:
 spring.application.name=
 server.port: 
 welcome=
+
+
