@@ -8,9 +8,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Election {
+public class Username {
 
-    private String typeElection;
-    private String localDateTime;
+    private String username;
+    private String password;
 
 }
