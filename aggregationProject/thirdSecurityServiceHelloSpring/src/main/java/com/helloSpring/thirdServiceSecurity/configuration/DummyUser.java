@@ -14,7 +14,6 @@ import java.util.List;
 public class DummyUser implements UserDetails {
 
 
-
     private final String username;
     private final String password;
     private final String authority;
@@ -30,6 +29,7 @@ public class DummyUser implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of  (()->authority);
     }
+
 
     @Override
     public String getPassword() {
