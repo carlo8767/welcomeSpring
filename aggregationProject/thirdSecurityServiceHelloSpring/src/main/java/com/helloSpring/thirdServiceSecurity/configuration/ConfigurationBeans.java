@@ -24,7 +24,7 @@ public class ConfigurationBeans {
         DummyUser secondUser = new DummyUser("pippo", "123456", "WRITE");
         List<UserDetails> users = List.of(firstUser, secondUser);
            // IF THE USER DO NOT EXIST THROW USERNAME NOT FOUND EXCEPTION
-        // ONLY USE FOR DEVELOPMENT PURPOSE
+        // ONLY USE FOR DEVELOPMENT PURPOSE YOU SHOULD USE MemoryUserDetailsService
         return new InMemoryUserDetailsManager(users);
     }
     /*
@@ -38,9 +38,11 @@ public class ConfigurationBeans {
 
     @Deprecated
     @Bean
-    public PasswordEncoder passwordEncoder() {
+    protected PasswordEncoder passwordEncoder() {
         // NEVER USER NO PASSWORD ENCODER IN PROD
+        // YOU SHOULD USE PBKDF2F
         return NoOpPasswordEncoder.getInstance();
+
     }
 
 

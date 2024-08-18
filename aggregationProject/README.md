@@ -6,6 +6,7 @@ This project covers this subject:
 3.Component 
 4.Bean
 5.Swagger
+6.Security
 
 You can find the swagger and the documentation at :
 http://localhost:port/contextPath/api-docs
@@ -27,5 +28,12 @@ See the Class Values with these properties:
 spring.application.name=
 server.port: 
 welcome=
+
+
+# thirdSecurityServiceHelloSpring
+This is project is dedicated at these security topic:
+Authentication (MangerUser with UserDetails and UserDetailsService)
+Password (How do deal with hash and encryption)
+
 
 
