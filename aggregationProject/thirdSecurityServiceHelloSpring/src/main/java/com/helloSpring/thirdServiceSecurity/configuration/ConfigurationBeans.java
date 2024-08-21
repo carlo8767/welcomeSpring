@@ -3,11 +3,14 @@ package com.helloSpring.thirdServiceSecurity.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 import java.util.List;
 
@@ -29,11 +32,25 @@ public class ConfigurationBeans {
     }
     /*
     // CONNECTION FOR THE REGISTRATION OF THE USER NO NEED TO CREATE THE ENTITY
-    // BUT YOU UPLOAD THE USER SISTEMATICALLY BUT YOU SHOULD CREATE A SQL FILE
+    // BUT YOU UPLOAD THE USER SYSTEMATICALLY BUT YOU SHOULD CREATE A SQL FILE
     @Bean
     public UserDetailsService userDetailsService(DataSource dataSource) {
        return new JdbcUserDetailsManager(dataSource);
     }*/
+
+
+    @Bean
+    protected SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+
+        httpSecurity.addFilterBefore(
+        new CustomFilter(), BasicAuthenticationFilter.class)
+       .authorizeRequests(c -> c.anyRequest().permitAll());
+        return httpSecurity.build();
+
+    }
+
+
+
 
 
     @Deprecated
@@ -44,6 +61,10 @@ public class ConfigurationBeans {
         return NoOpPasswordEncoder.getInstance();
 
     }
+
+
+
+
 
 
 

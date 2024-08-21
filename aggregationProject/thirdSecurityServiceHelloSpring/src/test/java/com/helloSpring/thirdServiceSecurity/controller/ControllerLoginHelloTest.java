@@ -27,18 +27,20 @@ class ControllerLoginHelloTest {
 
     // TEST AT THE SECURITY LAYER CONTEXT
     @Test
-    public void helloUnauthenticated() throws Exception {
+    public void helloUnauthenticatedbBadFilter() throws Exception {
         mvc.perform(get("/login/hello"))
-         .andExpect(status().isUnauthorized());
+         .andExpect(status().isBadRequest());
     }
+
 
     // SET A MOCK USER IN SECURITY CONTEXT
     @WithMockUser
     @Test
     public void helloUnauthenticatedoK() throws Exception {
-        mvc.perform(get("/login/hello"))
+        mvc.perform(get("/login/hello")
+                        .header("Request-Id", "199")
+                )
                 .andExpect(content().string("hello!"))
                 .andExpect(status().isOk());
-
     }
 }

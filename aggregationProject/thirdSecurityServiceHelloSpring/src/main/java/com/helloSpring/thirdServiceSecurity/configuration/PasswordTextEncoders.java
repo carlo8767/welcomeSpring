@@ -1,9 +1,14 @@
 package com.helloSpring.thirdServiceSecurity.configuration;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.encrypt.BytesEncryptor;
+import org.springframework.security.crypto.encrypt.Encryptors;
+import org.springframework.security.crypto.keygen.KeyGenerators;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 
 public class PasswordTextEncoders implements PasswordEncoder {
 
@@ -54,6 +59,25 @@ public class PasswordTextEncoders implements PasswordEncoder {
                         ITERATION, Pbkdf2PasswordEncoder. SecretKeyFactoryAlgorithm.PBKDF2WithHmacSHA256);
         return p.matches(rawPassword, encodedPassword);
 
+    }
+
+
+    public String applyBcryptPasswordEncoder(CharSequence rawPassword) throws NoSuchAlgorithmException {
+        SecureRandom s = SecureRandom.getInstanceStrong();
+        PasswordEncoder p = new BCryptPasswordEncoder(4, s);
+        return p.encode(rawPassword);
+    }
+
+    public void encryption (){
+        // KEY GENERATION FOR HASHING
+        String salt = KeyGenerators.string().generateKey();
+        String password = "secret";
+        String valueToEncrypt = "HELLO";
+
+        BytesEncryptor e = Encryptors.standard(password, salt);
+        // GIVE THE BYTE
+        byte [] encrypted = e.encrypt(valueToEncrypt.getBytes());
+        byte [] decrypted = e.decrypt(encrypted);
     }
 
 

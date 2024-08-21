@@ -34,6 +34,7 @@ welcome=
 This is project is dedicated at these security topic:
 Authentication (MangerUser with UserDetails and UserDetailsService)
 Password (How do deal with hash and encryption)
-
+Remember that you have to add the VM  argument
+-Djasypt.encryptor.password=javatechie for the encrytpion 
 
 
