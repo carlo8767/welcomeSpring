@@ -11,10 +11,6 @@ import java.util.List;
 // THIS CLASS VERIFY IF THE USER EXIST
 public class MemoryUserDetailsService implements UserDetailsManager {
 
-
-
-
-
     // INJECT REPOSITORY
     @Autowired
     UserServiceRepository userServiceRepository;
